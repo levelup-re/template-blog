@@ -1,4 +1,4 @@
-# Template
+# Template HTML/CSS du blog levelup.re
 
 Basé sur Tailwind CSS, le template du blog de levelup.re est désormais rendu opensource sous licence MIT. Il est fourni en tant que tel et ne fait pas l'objet d'un quelconque support technique.
 
