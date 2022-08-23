@@ -1,0 +1,92 @@
+@tailwind base;
+
+@layer base {
+    html { font-family: "Inter", sans-serif; }
+
+    @supports (font-variation-settings: normal) {
+        html { font-family: "Inter var", sans-serif; }
+    }
+
+    html, body {
+        min-height: -webkit-fill-available;
+        -webkit-touch-callout: none;
+        @apply scroll-smooth m-0 h-full min-h-screen w-full bg-slate-50/80;
+    }
+
+    body, header, main, footer { @apply relative z-0 text-slate-800/80 }    
+    
+    a { @apply duration-150 }
+
+    pre { 
+        @apply leading-loose mt-6 mb-12 p-6 rounded-md ;
+    }
+
+    code {
+        @apply text-sm;
+        counter-reset: step;
+        counter-increment: step 0;
+    }
+
+    iframe {
+        @apply w-full h-auto min-h-[500px];
+    }
+
+    img {
+        @apply rounded-md shadow-md shadow-slate-200/20
+    }
+
+    .caption {
+        @apply flex flex-col space-y-2 py-16;
+    }
+
+    .caption:after {
+        @apply block text-sm text-slate-800/60 text-center italic max-w-3xl;
+        content: attr(title);
+    }
+
+    blockquote:before {
+        @apply text-xl text-slate-600 font-semibold;
+        content: attr(title);
+    }
+
+    blockquote:after {
+        @apply text-cyan-800/60 font-semibold italic mt-6 block;
+        content: attr(author);
+    }
+
+    strong {
+        @apply text-slate-800/80;
+    }
+
+    progress[value] { @apply appearance-none inline-block h-0.5 w-48 }
+    progress[value]::-webkit-progress-bar { @apply rounded-full bg-slate-200/80 overflow-hidden }
+    progress[value]::-webkit-progress-value { @apply bg-cyan-400/80 }
+}
+
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .no-scrollbar::-webkit-scrollbar { @apply hidden; }
+    .no-scrollbar { -ms-overflow-style: none;  scrollbar-width: none; }
+
+    .mask {
+        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 981 701'%3E%3Cpath fill='%23D8D8D8' fill-rule='evenodd' d='M980.2 161L632 701H285l348.2-540h347zM695.2 0L347 540H0L348.2 0h347z'/%3E%3C/svg%3E");
+        mask-position: center;
+        mask-repeat: no-repeat;
+        mask-size: contain;
+        object-fit: cover;
+    }
+
+    .gradient {
+        background-image:#ffffff;
+        background:
+        radial-gradient(at 40% 20%, hsla(28,100%,74%,1) 0, transparent 50%),
+        radial-gradient(at 80% 0%, hsla(189,100%,56%,1) 0, transparent 50%),
+        radial-gradient(at 0% 50%, hsla(355,85%,93%,1) 0, transparent 50%),
+        radial-gradient(at 80% 50%, hsla(340,100%,76%,1) 0, transparent 50%),
+        radial-gradient(at 0% 100%, hsla(22,100%,77%,1) 0, transparent 50%),
+        radial-gradient(at 72% 69%, hsla(242,100%,70%,1) 0, transparent 50%),
+        radial-gradient(at 0% 0%, hsla(343,100%,76%,1) 0, transparent 50%);
+    }
+}
